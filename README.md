@@ -26,10 +26,6 @@ flowchart TD
   G --> H[Figures PNG and TIF]
   G --> I[Tables CSV]
 
-  H --> H1[SPECTRA_Evoked_GrandMean.png]
-  H --> H2[Topo_allfreq_alltimewin_allBaseline.png]
-  H --> H3[LatencySSVEP_Figure.tif]
-
   I --> I1[SSVEP_peakvssideband.csv]
   I --> I2[SSVEP_mod_Gabor_timecourses_BL.csv]
   I --> I3[segment_data.csv]
