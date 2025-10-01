@@ -16,27 +16,32 @@ This is a demo of a non-hierarchical graph visualization using [vis-network](htt
 ```mermaid
 flowchart TD
 
-    A[Raw Data] -->|MATLAB: SSVEP_ThreeMusk_preprocessing| B[set + epoch files]
-    B -->|MATLAB: SSVEP_ThreeMusk_Calc_TFA| C[TFA Data]
-    C -->|MATLAB: SSVEP_ThreeMusk (plot & analyze)| D[Outputs]
+    A[Raw Data] --> B[MATLAB preprocessing SSVEP_ThreeMusk_preprocessing]
+    B --> C[Epoch files (.set .epoch)]
+    C --> D[MATLAB TFA calculation SSVEP_ThreeMusk_Calc_TFA]
+    D --> E[TFA Data]
+    E --> F[MATLAB analysis SSVEP_ThreeMusk]
+    F --> G[Outputs]
 
-    D --> D1[Figures: PNG/TIF]
-    D1 --> D1a[SPECTRA_Evoked_GrandMean.png]
-    D1 --> D1b[Topo_allfreq_alltimewin_allBaseline.png]
-    D1 --> D1c[LatencySSVEP_Figure.tif]
+    G --> H[Figures PNG TIF]
+    G --> I[Tables CSV]
 
-    D --> D2[Tables: CSV]
-    D2 --> D2a[SSVEP_peakvssideband.csv]
-    D2 --> D2b[SSVEP_mod_Gabor_timecourses_BL.csv]
-    D2 --> D2c[segment_data.csv]
-    D2 --> D2d[SSVEP_mod_Gabor_twin.csv]
+    H --> H1[SPECTRA_Evoked_GrandMean.png]
+    H --> H2[Topo_allfreq_alltimewin_allBaseline.png]
+    H --> H3[LatencySSVEP_Figure.tif]
 
-    E[Additional CSV inputs: demographics & behavior] --> F[R: ThreeMusk_MethodsResults_newMethod2_final.Rmd]
-    D --> F
-    F --> G[Final Statistical Analysis + Figures]
+    I --> I1[SSVEP_peakvssideband.csv]
+    I --> I2[SSVEP_mod_Gabor_timecourses_BL.csv]
+    I --> I3[segment_data.csv]
+    I --> I4[SSVEP_mod_Gabor_twin.csv]
 
-    E --> E1[sample_demographics.csv]
-    E --> E2[extracted_data.csv]
-    E --> E3[DataTable.csv]
+    J[Additional inputs CSVs] --> K[R Markdown ThreeMusk_MethodsResults_newMethod2_final.Rmd]
+    I --> K
+    K --> L[Final Statistical Analysis and Figures]
+
+    J --> J1[sample_demographics.csv]
+    J --> J2[extracted_data.csv]
+    J --> J3[DataTable.csv]
+
 
 ```
