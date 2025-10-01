@@ -13,6 +13,7 @@ This is a demo of a non-hierarchical graph visualization using [vis-network](htt
 - `data.json`: Graph data (nodes + edges)
 
 
+```mermaid
 flowchart TD
 
     A[Raw Data] -->|MATLAB: SSVEP_ThreeMusk_preprocessing| B[.set + .epoch files]
@@ -37,3 +38,4 @@ flowchart TD
     E --> E1[sample_demographics.csv]
     E --> E2[extracted_data.csv]
     E --> E3[DataTable.csv]
+```
